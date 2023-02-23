@@ -1,4 +1,3 @@
-#!/usr/bin/python
 # Pomodoro
 
 Pomodoro is a simple command-line application that helps you stay focused and productive by using
