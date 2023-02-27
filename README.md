@@ -1,9 +1,12 @@
+[![PyPI](https://img.shields.io/pypi/v/cirillo.svg)](https://pypi.org/project/cirillo/)
+
 # Cirillo
 
 Cirillo is a simple command-line application that helps you stay focused and productive by using
 the Pomodoro technique. With cirillo, you can easily set work and break times, and the application
 will notify you when it's time to take a break.
-Installation
+
+## Installation
 
 You can install the application by cloning the repository and running the following
 commands in your terminal:
@@ -12,7 +15,7 @@ commands in your terminal:
 pip install cirillo
 ```
 
-Usage
+## Usage
 
 To use Cirillo, open your terminal and type the following command:
 
