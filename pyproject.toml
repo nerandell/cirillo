@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "cirillo"
-version = "0.0.2"
+version = "0.0.3"
 authors = [
     { name = "Ankit Chandawala", email = "ankitchandawala@gmail.com" },
 ]
@@ -16,10 +16,13 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
-dynamic = ["dependencies"]
 
-[tool.setuptools.dynamic]
-dependencies = { file = ["requirements.txt"] }
+dependencies = [
+    "click",
+    "tqdm",
+    "colorama",
+    "plyer"
+]
 
 [project.scripts]
 cirillo = "cirillo:main"

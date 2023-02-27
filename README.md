@@ -9,8 +9,7 @@ You can install the application by cloning the repository and running the follow
 commands in your terminal:
 
 ```bash
-git clone https://github.com/nerandell/cirillo.git
-cd cirillo
+pip install cirillo
 ```
 
 Usage
@@ -18,14 +17,14 @@ Usage
 To use Cirillo, open your terminal and type the following command:
 
 ```bash
-python cirillo.py
+cirillo
 ```
 
 This will start the Pomodoro timer with default settings of 25 minutes of work time and 5 minutes of
 break time. If you want to set custom times, you can use the --work and --rest options, like this:
 
 ```bash
-python cirillo.py --work 30 --rest 10
+cirillo --work 30 --rest 10
 ```
 
 This will set the work time to 30 minutes and the break time to 10 minutes.
@@ -33,7 +32,7 @@ This will set the work time to 30 minutes and the break time to 10 minutes.
 You can also enable desktop notifications by using the --notify option:
 
 ```bash
-python cirillo.py --notify
+cirillo --notify
 ```
 
 This will enable desktop notifications for the Pomodoro timer. Note that this option is only
