@@ -3,10 +3,10 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "pomodoro"
-version = "0.0.1"
+name = "cirillo"
+version = "0.0.2"
 authors = [
-  { name="Ankit Chandawala", email="ankitchandawala@gmail.com" },
+    { name = "Ankit Chandawala", email = "ankitchandawala@gmail.com" },
 ]
 description = "Command line Pomodoro timer"
 readme = "README.md"
@@ -16,7 +16,14 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
+dynamic = ["dependencies"]
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }
+
+[project.scripts]
+cirillo = "cirillo:main"
 
 [project.urls]
-"Homepage" = "https://github.com/nerandell/pomodoro"
-"Bug Tracker" = "https://github.com/nerandell/pomodoro/issues"
+"Homepage" = "https://github.com/nerandell/cirillo"
+"Bug Tracker" = "https://github.com/nerandell/cirillo/issues"

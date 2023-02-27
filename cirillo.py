@@ -65,7 +65,7 @@ def play_sound():
 @click.option('--work', '-w', default=25, type=int, help='Work time in minutes (default: 25)')
 @click.option('--rest', '-r', default=5, type=int, help='Break time in minutes (default: 5)')
 @click.option('--notify', '-n', is_flag=True, help='Enable desktop notifications (default: False)')
-def pomodoro(work, rest, notify):
+def main(work, rest, notify):
     # convert minutes to seconds
     work_time = work * 60
     break_time = rest * 60
@@ -100,4 +100,4 @@ def pomodoro(work, rest, notify):
 
 
 if __name__ == '__main__':
-    pomodoro()
+    main()
