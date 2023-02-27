@@ -1,10 +1,11 @@
 import time
+import platform
+import subprocess
 import os
+
 import click
 from tqdm import tqdm
 from colorama import Fore, Style
-import platform
-import subprocess
 
 WORK_MESSAGE = "Back to work!"
 REST_MESSAGE = "Take a break!"
@@ -14,10 +15,12 @@ def get_notify_command(message):
     """Returns the appropriate notification command based on the platform"""
     if platform.system() == 'Darwin':  # macOS
         return f'osascript -e \'display notification "{message}" with title "Pomodoro Timer"\''
-    elif platform.system() == 'Linux':  # Linux
+
+    if platform.system() == 'Linux':  # Linux
         return f'notify-send "Pomodoro Timer" "{message}"'
-    else:  # Windows
-        return ''
+
+    # Windows
+    return ''
 
 
 def check_capabilities():
@@ -44,7 +47,7 @@ def check_capabilities():
         try:
             import winsound
             can_play_sound = True
-        except:
+        except ImportError:
             pass
 
     return can_play_sound, can_notify
@@ -79,7 +82,7 @@ def main(work, rest, notify):
     def session(session_type, total_time):
         with tqdm(total=total_time, desc=session_type, unit='s',
                   bar_format='{l_bar}{bar}|') as pbar:
-            for i in range(total_time, 0, -1):
+            for _ in range(total_time, 0, -1):
                 pbar.update()
                 time.sleep(1)
             # play sound
