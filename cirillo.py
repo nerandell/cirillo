@@ -81,7 +81,7 @@ def main(work, rest, notify):
 
     def session(session_type, total_time):
         with tqdm(total=total_time, desc=session_type, unit='s',
-                  bar_format='{l_bar}{bar}|') as pbar:
+                  bar_format='{l_bar}{bar}| [{elapsed}<{remaining}]') as pbar:
             for _ in range(total_time, 0, -1):
                 pbar.update()
                 time.sleep(1)
